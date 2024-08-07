@@ -7,7 +7,6 @@ import com.reto.proyecto.proyecto.dto.UserResponseDTO;
 import java.util.List;
 
 public interface UserService {
-  public UserCreatedResponseDTO registerUser(UserRequestDTO userRequestDTO);
-
-  public List<UserResponseDTO> getAllUsers();
+  UserCreatedResponseDTO registerUser(UserRequestDTO userRequestDTO);
+  List<UserResponseDTO> getAllUsers();
 }

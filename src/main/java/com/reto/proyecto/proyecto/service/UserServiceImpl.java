@@ -11,13 +11,11 @@ import com.reto.proyecto.proyecto.entity.Role;
 import com.reto.proyecto.proyecto.entity.User;
 import com.reto.proyecto.proyecto.exception.EmailAlreadyExistsException;
 import com.reto.proyecto.proyecto.repository.UserRepository;
-import com.reto.proyecto.proyecto.service.UserService;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -78,13 +76,13 @@ public class UserServiceImpl implements UserService {
 
 
   private UserCreatedResponseDTO convertToResponseDTO(User user) {
-      UserCreatedResponseDTO responseDTO = new UserCreatedResponseDTO();
-      responseDTO.setId(user.getId());
-      responseDTO.setCreated(user.getCreated());
-      responseDTO.setModified(user.getModified());
-      responseDTO.setLastLogin(user.getLastLogin());
-      responseDTO.setToken(user.getToken());
-      responseDTO.setIsActive(user.isActive());
+    UserCreatedResponseDTO responseDTO = new UserCreatedResponseDTO();
+    responseDTO.setId(user.getId());
+    responseDTO.setCreated(user.getCreated());
+    responseDTO.setModified(user.getModified());
+    responseDTO.setLastLogin(user.getLastLogin());
+    responseDTO.setToken(user.getToken());
+    responseDTO.setIsActive(user.isActive());
     return responseDTO;
   }
 

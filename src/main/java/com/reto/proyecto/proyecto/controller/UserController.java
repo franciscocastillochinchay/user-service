@@ -1,8 +1,7 @@
 package com.reto.proyecto.proyecto.controller;
 
-import com.reto.proyecto.proyecto.dto.UserRequestDTO;
 import com.reto.proyecto.proyecto.dto.UserCreatedResponseDTO;
-import com.reto.proyecto.proyecto.exception.EmailAlreadyExistsException;
+import com.reto.proyecto.proyecto.dto.UserRequestDTO;
 import com.reto.proyecto.proyecto.service.UserService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,10 +23,8 @@ public class UserController {
 
   @PostMapping(value = "/register", consumes = "application/json", produces = "application/json")
   public ResponseEntity<?> registerUser(@Valid @RequestBody UserRequestDTO userRequestDTO) {
-      UserCreatedResponseDTO userCreatedResponseDTO = userService.registerUser(userRequestDTO);
-      return new ResponseEntity<>(userCreatedResponseDTO, HttpStatus.CREATED);
-
-
+    UserCreatedResponseDTO userCreatedResponseDTO = userService.registerUser(userRequestDTO);
+    return new ResponseEntity<>(userCreatedResponseDTO, HttpStatus.CREATED);
   }
 
   @GetMapping(value = "/getAllUsers", produces = "application/json")

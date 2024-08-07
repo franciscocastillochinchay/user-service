@@ -19,7 +19,7 @@ import java.util.function.Function;
 public class JwtService {
 
   @Value("${jwt.key}")
-  private String SECRET_KEY;
+  private String secretkey;
 
 
   public String extractUsername(String token) {
@@ -61,14 +61,14 @@ public class JwtService {
   }
 
   public Long getExpirationToken(String token) {
-    final Claims claims = Jwts.parser().setSigningKey(SECRET_KEY).parseClaimsJws(token).getBody();
+    final Claims claims = Jwts.parser().setSigningKey(secretkey).parseClaimsJws(token).getBody();
     final Date expiration = claims.getExpiration();
     final long expirationTime = expiration.getTime();
     return expirationTime - System.currentTimeMillis();
   }
 
   private Key getSignInKey() {
-    byte[] keyBytes = Decoders.BASE64.decode(SECRET_KEY);
+    byte[] keyBytes = Decoders.BASE64.decode(secretkey);
     return Keys.hmacShaKeyFor(keyBytes);
   }
 

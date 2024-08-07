@@ -1,6 +1,18 @@
 # API RESTful de creación de usuarios. Evaluación JAVA
 ## Descripción
 Este proyecto expone un API RESTful que permite crear y consultar usuarios. Se ha usando una Base de datos H2 en memoria para almacenar los datos de los usuarios.
+## Tecnologías
+- Java 17
+- Spring Boot 3.2.8
+- H2 Database
+- Lombok
+- Swagger
+- JWT
+- Maven
+- GitHub
+- IntelliJ IDEA
+- CheckStyle
+
 
 ## Controllers
 ### - UserController:  
