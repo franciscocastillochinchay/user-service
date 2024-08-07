@@ -1,0 +1,11 @@
+server:
+  port: 8087
+
+spring:
+  application:
+    name: springboot-jwt
+jwt:
+  key: 4D6251655468566D597133743677397A24432646294A404E635266556A586E5A
+password:
+  regex: ^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$
+
