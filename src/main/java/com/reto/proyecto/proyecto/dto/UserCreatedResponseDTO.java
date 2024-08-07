@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 
 @Data
 @Builder
@@ -13,9 +14,9 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 public class UserCreatedResponseDTO {
   private Long id;
-  private LocalDateTime created;
-  private LocalDateTime modified;
-  private LocalDateTime lastLogin;
+  private Date created;
+  private Date modified;
+  private Date lastLogin;
   private String token;
   private Boolean isActive;
 

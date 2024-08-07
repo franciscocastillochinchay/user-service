@@ -18,6 +18,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -49,9 +50,9 @@ public class UserServiceImpl implements UserService {
     user.setName(userRequestDTO.getName());
     user.setEmail(userRequestDTO.getEmail());
     user.setPassword(passwordEncoder.encode(userRequestDTO.getPassword()));
-    user.setCreated(LocalDateTime.now());
-    user.setModified(LocalDateTime.now());
-    user.setLastLogin(LocalDateTime.now());
+    user.setCreated(new Date());
+    user.setModified(new Date());
+    user.setLastLogin(new Date());
     user.setRole(Role.USER);
     user.setActive(true);
     user.setToken(jwtUtil.generateToken(user.getEmail(), user.isActive()));
