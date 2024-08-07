@@ -87,7 +87,7 @@ http://localhost:8087/api/v1/auth
       - El password debe tener una longitud mínima de 8 caracteres.
   
 
-- **GET** /users
+- **GET** /getAllUsers
   - **Descripción:** Obtiene la informacion de los usuarios de la BD.
   -  **Response Body:**
     ```json
